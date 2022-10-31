@@ -6,11 +6,24 @@
   justify-content: space-between;
   align-items: center;
   padding: 0px 5%;
+  button {
+    color: var(--content);
+    text-transform: none;
+    svg {
+      margin-left: 5px;
+    }
+  }
   a {
     text-decoration: none;
-    button {
-      color: var(--content);
-    }
+  }
+  .cartBtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    // .logout {
+    //   border: 1px solid var(--content);
+    // }
   }
   h1 {
     font-family: "Dancing Script", cursive;

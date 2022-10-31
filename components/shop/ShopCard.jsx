@@ -47,6 +47,7 @@ function ShopCard({ product }) {
         cart: [...prev.cart, item],
       }));
     }
+    alert("Cart updated!");
   }
 
   return (

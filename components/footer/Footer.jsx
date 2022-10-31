@@ -4,7 +4,7 @@ import Styles from "../../styles/components/footer.module.scss";
 function Footer() {
   return (
     <footer className={Styles.footer}>
-      <p>footer</p>
+      <p>Copyright @JustInTime 2022. All Rights Reserved.</p>
     </footer>
   );
 }

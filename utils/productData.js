@@ -33,7 +33,7 @@ export const products = [
     name: "Potato",
     type: "kg",
     rate: "30",
-    image: "/onions.webp",
+    image: "/potato.webp",
   },
   {
     name: "Spinach",

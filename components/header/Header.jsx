@@ -4,9 +4,17 @@ import { Button, IconButton } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Link from "next/link";
 import { StatesContext } from "../../pages/_app";
+import { useRouter } from "next/router";
 
 const Header = () => {
-  const { states } = useContext(StatesContext);
+  const router = useRouter();
+  const { states, setStates } = useContext(StatesContext);
+
+  const logout = () => {
+    setStates((prev) => ({ ...prev, user: {} }));
+    router.push("/login");
+  };
+
   return (
     <header className={Styles.header}>
       <Link href={"/"} passHref>
@@ -19,6 +27,9 @@ const Header = () => {
             <ShoppingCartIcon />
           </Button>
         </Link>
+        <Button className={Styles.logout} onClick={logout}>
+          Logout
+        </Button>
       </div>
     </header>
   );

@@ -6,8 +6,18 @@ import Wrapper from "../components/wrapper/Wrapper";
 import ShopCard from "../components/shop/ShopCard";
 import { Button, Stack } from "@mui/material";
 import { products } from "../utils/productData";
+import { useContext, useEffect } from "react";
+import { useRouter } from "next/router";
+import { StatesContext } from "./_app";
 
 export default function Home() {
+  const router = useRouter();
+  const { states, setStates } = useContext(StatesContext);
+  useEffect(() => {
+    if (!states.user.username) {
+      router.push("/login");
+    }
+  }, []);
   return (
     <Wrapper>
       <div className={Styles.banner}>

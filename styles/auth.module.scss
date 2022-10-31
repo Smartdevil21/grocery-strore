@@ -1,0 +1,22 @@
+.main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: right;
+    gap: 10px;
+    button {
+      background-color: var(--green);
+      color: var(--bg-primary);
+      text-transform: none;
+    }
+  }
+}

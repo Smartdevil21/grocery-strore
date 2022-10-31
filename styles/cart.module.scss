@@ -1,6 +1,6 @@
 .cart {
   width: 100%;
-  min-height: calc(100vh - 60px);
+  min-height: calc(90vh - 60px);
   > p {
     margin: 10px auto;
   }
@@ -21,9 +21,21 @@
         align-items: center;
         padding-left: 20px;
       }
+      &:nth-child(odd) {
+        background-color: var(--bg-secondary);
+      }
     }
-    &:nth-child(odd) {
-      background-color: var(--bg-secondary);
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .cart {
+    .cartComponents {
+      .productDetails {
+        .rate {
+          display: none;
+        }
+      }
     }
   }
 }

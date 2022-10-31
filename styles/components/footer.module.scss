@@ -4,5 +4,8 @@
   background-color: var(--content);
   color: var(--bg-primary);
   text-align: center;
-  padding: 10px;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
