@@ -27,7 +27,7 @@ function Cart() {
     return (
       <div className={Styles.cartCard}>
         <div className={Styles.img}>
-          <Image src={data.product.image} width={50} height={30} />
+          <Image src={data.product.image} width={50} height={30} alt={""} />
         </div>
         <div className={Styles.productDetails}>
           <p>{data.product.name}</p>

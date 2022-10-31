@@ -53,7 +53,7 @@ function ShopCard({ product }) {
   return (
     <div className={Styles.shopCard}>
       <div className={Styles.image}>
-        <Image src={product.image} width={250} height={200} />
+        <Image src={product.image} width={250} height={200} alt={""} />
       </div>
       <div className={Styles.desc}>
         <Stack
