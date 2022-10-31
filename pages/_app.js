@@ -1,10 +1,12 @@
 import "../styles/globals.css";
 import { createContext, useState } from "react";
 
-const StatesContext = createContext({});
+export const StatesContext = createContext({});
 
 function MyApp({ Component, pageProps }) {
-  const [states, setStates] = useState({});
+  const [states, setStates] = useState({
+    cart: [],
+  });
   return (
     <StatesContext.Provider value={{ states, setStates }}>
       <Component {...pageProps} />

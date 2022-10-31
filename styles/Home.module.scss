@@ -1,0 +1,61 @@
+.banner {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 10%;
+  text-align: center;
+  background-image: url("../public/banner.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  > p {
+    color: var(--green);
+  }
+  h1 {
+    margin-bottom: 20px;
+    width: 60%;
+  }
+  .inputSec {
+    background: var(--bg-primary);
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    svg {
+      fill: var(--green);
+      // padding: 5px;
+      margin: 0px 5px;
+    }
+    button {
+      background-color: var(--green);
+      color: var(--bg-primary);
+      text-transform: none;
+    }
+    input {
+      outline: none;
+      border: none;
+      height: 30px;
+      padding: 10px;
+      &::placeholder {
+        // font-size: 12px;
+        color: var(--content-sec);
+      }
+    }
+  }
+}
+.shop {
+  margin: 5vh auto;
+  padding: 5vh 0px;
+  text-align: center;
+  background-color: var(--bg-secondary);
+  .shopContainer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
