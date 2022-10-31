@@ -50,7 +50,7 @@ function Login() {
         />
         <Button type="submit">Login</Button>
         <p>
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <Link href={"/signup"} passHref>
             Create
           </Link>
