@@ -27,6 +27,11 @@ const Header = () => {
             <ShoppingCartIcon />
           </Button>
         </Link>
+        <Link href={"/about"} passHref>
+          <Button>
+            <p>About</p>
+          </Button>
+        </Link>
         <Button className={Styles.logout} onClick={logout}>
           Logout
         </Button>

@@ -1,6 +1,6 @@
 import { Button, Stack } from "@mui/material";
 import Image from "next/image";
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Wrapper from "../components/wrapper/Wrapper";
 import Styles from "../styles/cart.module.scss";
 import { StatesContext } from "./_app";
@@ -8,7 +8,19 @@ import { useRouter } from "next/router";
 
 function Cart() {
   const router = useRouter();
+  const [grandTotal, setGrandTotal] = useState(0);
   const { states, setStates } = useContext(StatesContext);
+
+  useEffect(() => {
+    if (!states.user.username) {
+      return router.push("/login");
+    }
+
+    states.cart.map((ele, index) => {
+      setGrandTotal(ele.qnty * Number(ele.product.rate));
+    });
+  }, []);
+
   function CartCard({ data }) {
     function removeFromCart() {
       setStates((prev) => ({
@@ -19,11 +31,6 @@ function Cart() {
       }));
     }
 
-    useEffect(() => {
-      if (!states.user.username) {
-        router.push("/login");
-      }
-    }, []);
     return (
       <div className={Styles.cartCard}>
         <div className={Styles.img}>
@@ -33,18 +40,19 @@ function Cart() {
           <p>{data.product.name}</p>
           <Stack direction={"row"} alignItems={"center"} spacing={3}>
             <p>Qty:{data.qnty}</p>
-            <p className={Styles.rate}>Rs.{data.product.rate} each</p>
+            <p className={Styles.rate}>${data.product.rate} each</p>
             <Button onClick={removeFromCart}>Remove</Button>
           </Stack>
         </div>
       </div>
     );
   }
+
   return (
     <Wrapper>
       <section className={Styles.cart}>
         <h1>Welcome, {states.user.username}</h1>
-        <p>Your Grand Total is:</p>
+        <p>Your Grand Total is: ${grandTotal}</p>
         <div className={Styles.cartComponents}>
           {states.cart.map((ele, index) => {
             return <CartCard key={index} data={ele} />;

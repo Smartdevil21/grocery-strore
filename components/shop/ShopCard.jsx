@@ -62,7 +62,7 @@ function ShopCard({ product }) {
           alignItems={"center"}
         >
           <p className={Styles.name}>{product.name}</p>
-          <p>Rs.{product.rate}</p>
+          <p>${product.rate}</p>
         </Stack>
         <p>(Rate per {product.type})</p>
         <div className={Styles.btns}>

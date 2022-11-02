@@ -30,3 +30,14 @@
     color: var(--green);
   }
 }
+
+@media only screen and (max-width: 700px) {
+  .header {
+    h1 {
+      font-size: 24px;
+    }
+    .cartBtn {
+      gap: 0;
+    }
+  }
+}
