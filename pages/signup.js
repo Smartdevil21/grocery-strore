@@ -23,7 +23,7 @@ function Signup() {
       userDetails.password
     );
     setStates((prev) => ({ ...prev, user: userDetails }));
-    router.push("/");
+    router.push("/home");
   }
   return (
     <main className={Styles.main}>

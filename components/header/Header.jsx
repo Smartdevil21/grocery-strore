@@ -12,12 +12,12 @@ const Header = () => {
 
   const logout = () => {
     setStates((prev) => ({ ...prev, user: {} }));
-    router.push("/login");
+    router.push("/");
   };
 
   return (
     <header className={Styles.header}>
-      <Link href={"/"} passHref>
+      <Link href={"/home"} passHref>
         <h1>JustInTime</h1>
       </Link>
       <div className={Styles.cartBtn}>

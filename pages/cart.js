@@ -13,11 +13,12 @@ function Cart() {
 
   useEffect(() => {
     if (!states.user.username) {
-      return router.push("/login");
+      return router.push("/");
     }
 
     states.cart.map((ele, index) => {
-      setGrandTotal(ele.qnty * Number(ele.product.rate));
+      const sum = ele.qnty * Number(ele.product.rate);
+      setGrandTotal((prev) => prev + sum);
     });
   }, []);
 
@@ -29,6 +30,7 @@ function Cart() {
           (ele, index) => ele.product.name !== data.product.name
         ),
       }));
+      setGrandTotal((prev) => prev - data.qnty * Number(data.product.rate));
     }
 
     return (
