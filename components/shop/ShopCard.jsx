@@ -24,6 +24,7 @@ function ShopCard({ product }) {
   }
 
   function addToCart() {
+    if (qnty <= 0) return alert("Can't add 0 items to cart.");
     const item = {
       product,
       qnty,
@@ -35,9 +36,7 @@ function ShopCard({ product }) {
       setStates((prev) => ({
         ...prev,
         cart: [
-          ...prev.cart.filter((ele, ind) => {
-            ele.product.name !== product.name;
-          }),
+          ...prev.cart.filter((ele, ind) => ele.product.name !== product.name),
           item,
         ],
       }));
