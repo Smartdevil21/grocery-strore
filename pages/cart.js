@@ -60,6 +60,7 @@ function Cart() {
             return <CartCard key={index} data={ele} />;
           })}
         </div>
+        <Button className={Styles.checkout}>Checkout</Button>
       </section>
     </Wrapper>
   );

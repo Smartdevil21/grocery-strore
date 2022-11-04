@@ -1,11 +1,21 @@
 .cart {
   width: 100%;
   min-height: calc(90vh - 60px);
+  position: relative;
   > p {
     margin: 10px auto;
   }
   > h1 {
     margin: 20px auto;
+  }
+  .checkout {
+    position: absolute;
+    bottom: 0px;
+    right: 20px;
+    background-color: var(--green);
+    color: var(--bg-primary);
+    text-transform: none;
+    font-weight: bold;
   }
   .cartComponents {
     .cartCard {
@@ -20,6 +30,15 @@
         justify-content: space-between;
         align-items: center;
         padding-left: 20px;
+        button {
+          color: red;
+          text-transform: none;
+          font-weight: bold;
+          &:hover {
+            background-color: red;
+            color: var(--bg-primary);
+          }
+        }
       }
       &:nth-child(odd) {
         background-color: var(--bg-secondary);
