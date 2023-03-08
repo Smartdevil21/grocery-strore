@@ -54,7 +54,7 @@ function Signup() {
         <Button type="submit">Create</Button>
         <p>
           Already have an account?{" "}
-          <Link href={"/login"} passHref>
+          <Link href={"/"} passHref>
             Login
           </Link>
         </p>
